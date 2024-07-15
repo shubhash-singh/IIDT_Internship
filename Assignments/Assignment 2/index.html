@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration</h1>
+        <div class="form-group">
+            <select id="event">
+                <option value="" disabled selected>Choose an Event</option>
+                <option value="trekking">Trekking</option>
+                <option value="rock_climbing">Rock Climbing</option>
+                <option value="hiking">Hiking</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <button onclick="addParticipant()">Add</button>
+
+        <div class="event-list">
+            <div class="event">
+                <h2>Trekking</h2>
+                <ul id="trekking-list">
+                    
+                </ul>
+            </div>
+            <div class="event">
+                <h2>Rock Climbing</h2>
+                <ul id="rock_climbing-list">
+                    
+                </ul>
+            </div>
+            <div class="event">
+                <h2>Hiking</h2>
+                <ul id="hiking-list">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
