@@ -17,7 +17,7 @@
 |  Business Logic     |
 |       Layer         |
 |   (Backend)         |
-|                     |
+|                     | 
 | +---------------+   |
 | | Django Views  |   |
 | +---------------+   |
