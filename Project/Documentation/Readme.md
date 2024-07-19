@@ -73,7 +73,7 @@ The database schema for the project consists of the following table:
 
 ## Database Implementation
 
-# Database Models (models.py)
+### Database Models (models.py)
 
     from django.db import models
 
@@ -86,7 +86,7 @@ The database schema for the project consists of the following table:
         def __str__(self):
             return self.title
 
-# SQL for Creating Tables
+### SQL for Creating Tables
 
     CREATE TABLE Video (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -94,11 +94,60 @@ The database schema for the project consists of the following table:
         title TEXT NOT NULL,
         description TEXT,
         download_link TEXT NOT NULL
-);
+    );
 
-# Sample Data
+### Sample Data
 
     INSERT INTO Video (url, title, description, download_link) VALUES
     ('https://www.youtube.com/watch?v=example1', 'Example Video 1', 'This is an example video.', 'http://example.com/download1'),
     ('https://www.youtube.com/watch?v=example2', 'Example Video 2', 'This is another example video.', 'http://example.com/download2'),
     ('https://www.youtube.com/watch?v=example3', 'Example Video 3', 'Description for video 3', 'http://example.com/download3');
+
+## SQL Queries
+
+### Data Manipulation Queries
+
+    1. Insert Data:
+
+        INSERT INTO Video (url, title, description, download_link) VALUES ('https://www.youtube.com/watch?v=example4', 'Example Video 4', 'Description for video 4', 'http://example.com/download4');
+
+    2. Update Data:
+
+        UPDATE Video SET title = 'Updated Video Title' WHERE id = 1;
+
+    3. Delete Data:
+
+        DELETE FROM Video WHERE id = 3;
+
+### Data Retrieval Queries
+
+    1. Select All Videos:
+
+        SELECT * FROM Video;
+
+    2. Select Video by ID:
+
+        SELECT * FROM Video WHERE id = 1;
+
+    3. Select Videos with Specific Title:
+
+        SELECT * FROM Video WHERE title LIKE '%Example%';
+
+    4. Count Videos:
+
+        SELECT COUNT(*) FROM Video;
+
+    5. Join and Group Videos:
+
+        SELECT title, COUNT(*) FROM Video GROUP BY title;
+
+### Complex Queries
+
+    1. Subquery:
+
+        SELECT * FROM Video WHERE id IN (SELECT id FROM Video WHERE title LIKE '%Example%');
+
+    2. Advanced Query:
+
+        SELECT * FROM Video WHERE title IN (SELECT title FROM Video GROUP BY title HAVING COUNT(*) > 1);
+
