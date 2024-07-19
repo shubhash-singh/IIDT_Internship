@@ -75,13 +75,13 @@ The database schema for the project consists of the following table:
 
 Database Models (models.py)
 
-`from django.db import models
+    from django.db import models
 
-class Video(models.Model):
-    url = models.URLField()
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    download_link = models.URLField()
+    class Video(models.Model):
+        url = models.URLField()
+        title = models.CharField(max_length=255)
+        description = models.TextField()
+        download_link = models.URLField()
 
-    def __str__(self):
-        return self.title`
+        def __str__(self):
+            return self.title
