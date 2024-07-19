@@ -73,7 +73,7 @@ The database schema for the project consists of the following table:
 
 ## Database Implementation
 
-Database Models (models.py)
+# Database Models (models.py)
 
     from django.db import models
 
@@ -85,3 +85,20 @@ Database Models (models.py)
 
         def __str__(self):
             return self.title
+
+# SQL for Creating Tables
+
+    CREATE TABLE Video (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        url TEXT NOT NULL,
+        title TEXT NOT NULL,
+        description TEXT,
+        download_link TEXT NOT NULL
+);
+
+# Sample Data
+
+    INSERT INTO Video (url, title, description, download_link) VALUES
+    ('https://www.youtube.com/watch?v=example1', 'Example Video 1', 'This is an example video.', 'http://example.com/download1'),
+    ('https://www.youtube.com/watch?v=example2', 'Example Video 2', 'This is another example video.', 'http://example.com/download2'),
+    ('https://www.youtube.com/watch?v=example3', 'Example Video 3', 'Description for video 3', 'http://example.com/download3');
