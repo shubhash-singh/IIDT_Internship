@@ -1,3 +1,5 @@
+# Youtube Video Downloader
+
 ## Table of Contents
 
    1. Introduction
@@ -151,3 +153,12 @@ The database schema for the project consists of the following table:
 
         SELECT * FROM Video WHERE title IN (SELECT title FROM Video GROUP BY title HAVING COUNT(*) > 1);
 
+## Conclusion
+
+The YouTube Video Downloader project successfully provides a user-friendly interface for downloading YouTube videos. By leveraging Django for the backend and using HTML/CSS for the frontend, the project demonstrates an effective approach to handling video downloads. The database schema is designed to ensure data integrity and support efficient data retrieval.
+
+## References
+
+    Django Documentation: https://docs.djangoproject.com/
+    SQLite Documentation: https://www.sqlite.org/docs.html
+    HTML and CSS: https://www.w3schools.com/
