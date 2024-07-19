@@ -56,3 +56,32 @@ The architecture of the YouTube Video Downloader project is divided into three m
     Database (SQLite):
         Stores video data including URLs, titles, descriptions, and download links.
         Ensures data integrity and supports SQL queries for data manipulation and retrieval.
+
+## Database Schema
+
+The database schema for the project consists of the following table:
+
+        Video Table:
+        
+        Column          |  Data Type    | Constraints
+        ----------------|---------------|----------------
+        id              |  INTEGER      | PRIMARY KEY AUTOINCREMENT
+        url             |  TEXT         | NOT NULL
+        title           |  TEXT         | NOT NULL
+        description     |  TEXT         |
+        download_link   |  TEXT         | NOT NULL
+
+## Database Implementation
+
+Database Models (models.py)
+
+`from django.db import models
+
+class Video(models.Model):
+    url = models.URLField()
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    download_link = models.URLField()
+
+    def __str__(self):
+        return self.title`
